@@ -1,0 +1,17 @@
+{
+  "name": "natours-css",
+  "version": "1.0.0",
+  "description": "Landing page for natours",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss css/style.css -w",
+    "build:sass": "node-sass -r sass/main.scss css/style.css",
+    "watch:sass": "npm run build:sass && npm run build:sass -- -w"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^4.13.1"
+  },
+  "dependencies": {}
+}
