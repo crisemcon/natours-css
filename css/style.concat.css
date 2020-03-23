@@ -1259,7 +1259,6 @@ body {
   z-index: 3;
   opacity: 0;
   width: 0;
-  visibility: hidden;
   transition: all 0.7s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
 
 .navigation__list {
@@ -1271,7 +1270,8 @@ body {
   text-align: center; }
 
 .navigation__item {
-  margin: 2rem; }
+  margin: 2rem;
+  visibility: hidden; }
 
 .navigation__link:link, .navigation__link:visited {
   font-size: 3rem;
@@ -1295,7 +1295,9 @@ body {
 
 .navigation__checkbox:checked ~ .navigation__nav {
   opacity: 1;
-  width: 100%;
+  width: 100%; }
+
+.navigation__checkbox:checked ~ .navigation__nav .navigation__item {
   visibility: visible; }
 
 .navigation__icon {
