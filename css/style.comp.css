@@ -780,7 +780,7 @@ body {
   position: fixed;
   top: 6rem;
   right: 6rem;
-  z-index: 4;
+  z-index: 6;
   box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
   text-align: center;
   cursor: pointer; }
@@ -797,7 +797,7 @@ body {
   top: 6.5rem;
   right: 6.5rem;
   background-image: radial-gradient(#74dd4a, #357e14);
-  z-index: 2;
+  z-index: 4;
   transition: all .8s ease; }
   @media only screen and (max-width: 56.25em) {
     .navigation__background {
@@ -810,7 +810,7 @@ body {
   position: fixed;
   top: 0;
   right: 0;
-  z-index: 3;
+  z-index: 5;
   opacity: 0;
   width: 0;
   transition: all 0.7s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
@@ -825,7 +825,9 @@ body {
 
 .navigation__item {
   margin: 2rem;
-  visibility: hidden; }
+  visibility: hidden;
+  opacity: 0;
+  width: 0; }
 
 .navigation__link:link, .navigation__link:visited {
   font-size: 3rem;
@@ -852,7 +854,9 @@ body {
   width: 100%; }
 
 .navigation__checkbox:checked ~ .navigation__nav .navigation__item {
-  visibility: visible; }
+  visibility: visible;
+  opacity: 1;
+  width: 100%; }
 
 .navigation__icon {
   position: relative;
