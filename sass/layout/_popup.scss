@@ -11,6 +11,15 @@
     visibility: hidden;
     transition: all .3s;
 
+    
+    
+
+    @supports(-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px)){
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        background-color: rgba($color-black, .3);
+    }
+
     &:target {
         opacity: 1;
         visibility: visible;
@@ -42,7 +51,7 @@
 
     &__content {
         @include absCenter;
-        width: 75%;
+        width: 80%;
         margin: 0 auto;
         padding: 1rem;
         background-color: $color-white;
@@ -54,11 +63,25 @@
         opacity: 0;
         transform: translate(-50%, -50%) scale(.4);
         transition: all .4s .2s;
+
+        @include respond(tab-land) {
+            width: 90%;
+        }
+        @include respond(tab-port) {
+            display: block;
+            width: 95%;
+        }
     }
 
     &__left {
         width: 33.333333%;
+        height: 100%;
         display: table-cell;
+        @include respond(tab-port) {
+            width: 100%;
+            height: 33.333333%;
+            display: block;
+        }
     }
 
     &__right {
@@ -66,11 +89,22 @@
         display: table-cell;
         vertical-align: middle;
         padding: 3rem 5rem;
+
+        @include respond(tab-port) {
+            width: 100%;
+            height: 66.333333%;
+            display: block;
+        }
     }
 
     &__img {
         display: block;
         width: 100%;
+
+        @include respond(tab-port) {
+            width: 49%;
+            display: inline-block;
+        }
     }
 
     &__text {

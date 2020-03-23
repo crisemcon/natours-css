@@ -1,12 +1,37 @@
 .header {
-    height: 95vh; /* 95% del viewport, es decir, de la pantalla*/
-    background-image: linear-gradient(to right bottom, rgba($color-primary-light, 0.8), rgba($color-primary-dark, 0.8) ), url('../img/hero.jpg');
+    height: 85vh; /* 95% del viewport, es decir, de la pantalla*/
+    background-image: linear-gradient(to right bottom, rgba($color-primary-light, 0.8), rgba($color-primary-dark, 0.8) ), url('../img/hero-small.jpg');
     background-size: cover;
     background-position: top; /*la imagen siempre se queda en el tope del contenedor*/
 
-    -webkit-background-clip: polygon(0 0, 100% 0, 100% 75%, 0 100%);
-    clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
     position: relative;
+    
+    @supports (clip-path: polygon(0 0)) or (-webkit-background-clip: polygon(0 0)){
+        -webkit-background-clip: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+        height: 95vh;
+    }
+
+    @media only screen and (min-resolution: 192dpi) and (min-width: 37.5em),
+            (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
+            (min-width: 125em) {  // , : or
+        background-image: linear-gradient(to right bottom, rgba($color-primary-light, 0.8), rgba($color-primary-dark, 0.8) ), url('../img/hero.jpg');
+    }
+
+
+    @include respond(tab-land) {
+        -webkit-background-clip: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
+    }
+
+    @include respond(tab-port) {
+        -webkit-background-clip: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+    }
+    @include respond(phone) {
+        -webkit-background-clip: polygon(0 0, 100% 0, 100% 90vh, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 90vh, 0 100%);
+    }
 
     &__logo-box {
         position: absolute;
