@@ -1347,7 +1347,7 @@ body {
   background-size: cover;
   top: 0;
   right: 0;
-  z-index: 5;
+  z-index: 10;
   opacity: 0;
   visibility: hidden;
   transition: all .3s; }
